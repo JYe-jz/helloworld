@@ -1,5 +1,6 @@
 const http = require('http');
-const port = 3000;
+// 兼容云平台（Zeabur/Vercel/Render等）注入的 PORT 环境变量，本地运行时默认 3000
+const port = process.env.PORT || 3000;
 
 const server = http.createServer((req, res) => {
   res.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8' });
